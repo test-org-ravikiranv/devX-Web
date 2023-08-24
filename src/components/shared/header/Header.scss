@@ -1,0 +1,14 @@
+.flex-gap {
+  gap: 50px;
+  div {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  div:hover {
+    color: #00adee;
+  }
+}
+
+.opacity {
+  opacity: 15%;
+}
