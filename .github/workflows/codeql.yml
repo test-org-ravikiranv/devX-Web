@@ -80,3 +80,10 @@ jobs:
       uses: github/codeql-action/analyze@v2
       with:
         category: "/language:${{matrix.language}}"
+
+    - name: Upload artifact to GitHub Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: codeql-results
+        path: /home/runner/work/_temp/codeql_databases/javascript.zip
+    
