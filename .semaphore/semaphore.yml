@@ -27,7 +27,7 @@ blocks:
             - npm install
             - npm run build --if-present
             - ls
-            - artifact push project build
+            - artifact push workflow build
       env_vars:
         - name: CI
           value: 'false'
