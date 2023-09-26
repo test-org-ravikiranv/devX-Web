@@ -8,12 +8,8 @@ blocks:
   - name: Docker Build & Push
     task:
       jobs:
-        - name: Docker Build
+        - name: Docker Build & Push
           commands:
             - checkout
             - 'docker build -t ravikirankiran097/devx-semophore:v1.0 .'
-            - cache store
-        - name: Docker Push
-          commands:
-            - cache restore
             - 'docker push ravikirankiran097/devx-semophore:v1.0'
