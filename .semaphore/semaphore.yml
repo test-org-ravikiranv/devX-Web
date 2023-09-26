@@ -28,4 +28,7 @@ blocks:
             - npm run build --if-present
         - name: Create Artifacts
           commands:
-            - artifact pull project dist
+            - artifact push project dist
+      env_vars:
+        - name: CI
+          value: 'false'
