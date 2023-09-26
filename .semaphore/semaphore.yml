@@ -17,6 +17,7 @@ blocks:
             - docker logout
       secrets:
         - name: dockerhub_secret
+    dependencies: []
   - name: Build & Create Artifacts
     task:
       jobs:
@@ -27,7 +28,9 @@ blocks:
             - npm install
             - npm run build --if-present
             - ls
-            - artifact push workflow build
+            - semaphore artifacts upload build
       env_vars:
         - name: CI
           value: 'false'
+    dependencies:
+      - Docker Build & Push
