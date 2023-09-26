@@ -12,7 +12,7 @@ blocks:
           commands:
             - checkout
             - ls
-            - 'docker build -t ravikirankiran097/devx-semophore:v1.0 ./Dockerfile'
+            - 'docker build -t ravikirankiran097/devx-semophore:v1.0 .'
         - name: Docker Push
           commands:
             - 'docker push ravikirankiran097/devx-semophore:v1.0'
