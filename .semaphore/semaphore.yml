@@ -30,5 +30,3 @@ blocks:
           commands:
             - mv dist/* $HOME/artifacts
             - echo "Artifacts created"
-          artifact_paths:
-            - $HOME/artifacts/*
