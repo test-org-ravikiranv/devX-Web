@@ -11,8 +11,9 @@ blocks:
         - name: Docker Build
           commands:
             - checkout
-            - ls
             - 'docker build -t ravikirankiran097/devx-semophore:v1.0 .'
+            - cache store
         - name: Docker Push
           commands:
+            - cache restore
             - 'docker push ravikirankiran097/devx-semophore:v1.0'
