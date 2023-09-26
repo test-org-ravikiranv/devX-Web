@@ -28,7 +28,7 @@ blocks:
             - npm install
             - npm run build --if-present
             - ls
-            - semaphore artifacts upload build
+            - artifacts push workflow build
       env_vars:
         - name: CI
           value: 'false'
