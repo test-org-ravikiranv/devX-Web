@@ -4,9 +4,6 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-global_job_config:
-  secrets:
-    - name: dockerhub_secret
 blocks:
   - name: Docker Build & Push
     task:
@@ -15,5 +12,8 @@ blocks:
           commands:
             - checkout
             - 'docker build -t ravikirankiran097/devx-semophore:v1.0 .'
-            - docker images
+            - echo $DOCKERHUB_PASSWORD | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
             - 'docker push ravikirankiran097/devx-semophore:v1.0'
+            - docker logout
+      secrets:
+        - name: dockerhub_secret
