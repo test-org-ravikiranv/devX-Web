@@ -25,8 +25,7 @@ blocks:
             - checkout
             - sem-version node 18
             - npm install
-            - npm run build
+            - npm run build --if-present
         - name: Create Artifacts
           commands:
-            - mv dist/* $HOME/artifacts
-            - echo "Artifacts created"
+            - artifact pull project dist
